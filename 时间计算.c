@@ -20,13 +20,12 @@ int main()
 		//printf("\n请输入要+的时间(单位分钟)：");
 		scanf("%d", &num);
 		minute += num;
-		if (hour >= 24)hour = 0;
 		while (minute >= 60)
 		{
 			hour++;
 			minute -= 60;
+			if (hour >= 24)hour = 0;
 		}
-		if (hour >= 24)hour = 0;
 		printf("\n增加后的时间是:%02d:%02d\n", hour, minute);
 	}
 	else if (op == '-')
@@ -34,13 +33,12 @@ int main()
 		//printf("\n请输入要-的时间(单位分钟)：");
 		scanf("%d", &num);
 		minute -= num;
-		if (hour < 0)hour = 23;
 		while (minute < 0)
 		{
 			hour--;
 			minute += 60;
+			if (hour < 0)hour = 23;
 		}
-		if (hour < 0)hour = 23;
 		printf("\n减少后的时间是:%02d:%02d\n", hour, minute);
 	}
 	else
